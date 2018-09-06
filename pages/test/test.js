@@ -75,12 +75,6 @@ Page({
       text: 'Hello Test',
       array: [{ msg: 'Vue' }, { msg: 'Vuex' }]
     })
-    var pages = getCurrentPages()
-    var currPage = pages[pages.length - 1] //当前页面
-    var prevPage = pages[pages.length - 2] //上一个页面
-
-    console.log(currPage)
-    console.log(prevPage)
   },
   customData: {
     hi: 'MINA'
@@ -92,7 +86,7 @@ Page({
   // 调用页面路由带的参数可以在目标页面的onLoad中获取。
   newpage() {
     wx.navigateTo({
-      url: '/pages/index/index'
+      url: '/pages/template/template'
     })
   },
   redirect() {

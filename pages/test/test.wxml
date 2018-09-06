@@ -15,3 +15,8 @@
 <view>
     <navigator url="/pages/index/index" open-type="switchTab">跳转Index</navigator>
 </view>
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:key="*this">
+    <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j" wx:key="*this">
+        <view wx:if="{{i <= j}}">{{i}} * {{j}} = {{i * j}}</view>
+    </view>
+</view>
