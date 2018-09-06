@@ -1,0 +1,17 @@
+<view>{{text}}</view>
+<view wx:for="{{array}}" wx:for-item="array" wx:key="index">{{array.msg}}</view>
+<view class="button">
+    <button open-type="share">SHARE</button>
+    <button bindtap="clickMe">Click Me!</button>
+    <button bindtap="changeData">Modify Data!</button>
+</view>
+<view class="button">
+    <button bindtap="newpage">打开新页面</button>
+    <button bindtap="redirect">页面重定向</button>
+    <button bindtap="reback">页面返回</button>
+    <button bindtap="tabSwitch">Tab 切换</button>
+    <button bindtap="restart">重启动</button>
+</view>
+<view>
+    <navigator url="/pages/index/index" open-type="switchTab">跳转Index</navigator>
+</view>
