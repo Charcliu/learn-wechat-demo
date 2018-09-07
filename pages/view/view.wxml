@@ -1,0 +1,30 @@
+<view>{{message}}</view>
+<!-- 字符串，代表在 for 循环的 array 中 item 的某个 property，该 property 的值需要是列表中唯一的字符串或数字，且不能动态改变。
+保留关键字 *this 代表在 for 循环中的 item 本身，这种表示需要 item 本身是一个唯一的字符串或者数字，如： -->
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;" bindchange="switch1Change">
+    {{item.id}}
+</switch>
+<!-- 组件中可以定义数据 -->
+<button bindtap="switch" data-alpha-beta="1">Switch</button>
+<button bindtap="addToFront">Add to the front</button>
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;">{{item}}</switch>
+<button bindtap="addNumberToFront">Add to the front</button>
+<!-- wx:if -->
+<view wx:if="{{length > 5}}">1</view>
+<view wx:elif="{{length > 2}}">2</view>
+<view wx:else>3</view>
+<block wx:if="{{true}}">
+    <view>view1</view>
+    <view>view2</view>
+</block>
+<!-- 定义模板 -->
+<!-- index: int
+  msg: string
+  time: string -->
+<template name="msgItem">
+    <view>
+        <text>{{index}}: {{msg}}</text>
+        <text>Time: {{time}}</text>
+    </view>
+</template>
+<template is="msgItem" data="{{...item}}" />

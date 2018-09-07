@@ -81,5 +81,10 @@ Page({
       }
     })
   },
-  mapClick: function(res) {}
+  mapClick: function(res) {},
+  goToTemplate() {
+    wx.navigateTo({
+      url: '/pages/template/template'
+    })
+  }
 })

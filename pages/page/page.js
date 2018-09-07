@@ -86,7 +86,7 @@ Page({
   // 调用页面路由带的参数可以在目标页面的onLoad中获取。
   newpage() {
     wx.navigateTo({
-      url: '/pages/template/template'
+      url: '/pages/view/view'
     })
   },
   redirect() {

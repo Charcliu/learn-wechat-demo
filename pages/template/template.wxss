@@ -1,0 +1,4 @@
+@import '../../utils/common.wxss';
+.include {
+  font-size: 100rpx;
+}

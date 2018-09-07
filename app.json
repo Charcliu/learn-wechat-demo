@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/test/test",
+    "pages/page/page",
+    "pages/view/view",
     "pages/template/template"
   ],
   "window": {
@@ -22,9 +23,10 @@
         "text": "日志"
       },
       {
-        "pagePath": "pages/test/test",
-        "text": "测试"
+        "pagePath": "pages/page/page",
+        "text": "页面"
       }
     ]
-  }
+  },
+  "debug": true
 }

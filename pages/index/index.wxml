@@ -20,4 +20,12 @@
     <button bindtap="changeMsg">改变MSG</button>
     <text>{{msg}}</text>
   </view>
+  <!-- import 的作用域
+  import 有作用域的概念，即只会 import 目标文件中定义的 template，而不会 import 目标文件 import 的 template。
+  如：C import B，B import A，在C中可以使用B定义的template，在B中可以使用A定义的template，但是C不能使用A定义的template。 -->
+  <import src="../template/template.wxml" />
+  <template is="msgItem" data="{{index:1,msg:'Msg Item',time:'2018-09-10'}}" />
+  <view bindtap="goToTemplate"><button>To Template</button></view>
+  <!-- include 可以将目标文件除了 <template/> <wxs/> 外的整个代码引入，相当于是拷贝到 include 位置 -->
+  <include src="../template/template.wxml" />
 </view>
