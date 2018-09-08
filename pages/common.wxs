@@ -1,0 +1,7 @@
+function sayName() {
+  return 'Chang Lau'
+}
+
+module.exports = {
+  sayName: sayName
+}

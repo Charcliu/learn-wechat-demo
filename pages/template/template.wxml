@@ -3,10 +3,37 @@
   time: string -->
 <!-- 定义模板 -->
 <template name="msgItem">
-    <view>
-        <text>{{index}}: {{msg}}</text>
-        <text>Time: {{time}}</text>
-    </view>
+  <view>
+    <text>{{index}}: {{msg}}</text>
+    <text>Time: {{time}}</text>
+  </view>
 </template>
 <template is="msgItem" data="{{index:1,msg:'Msg Item',time:'2018-09-10'}}" />
-<view class="common include">Include</view>
+<view class="common include" style="background-color:{{bgColor}}">Include</view>
+<!-- wxs -->
+<!-- <wxs module="m1">
+var getMax = function(array) {
+  var max = undefined;
+  for (var i = 0; i < array.length; ++i) {
+    max = max === undefined ? 
+      array[i] : 
+      (max >= array[i] ? max : array[i]);
+  }
+  return max;
+}
+//暴露其内部的私有变量与函数
+module.exports.getMax = getMax;
+</wxs> -->
+<!-- <wxs> 模块只能在定义模块的 WXML 文件中被访问到 -->
+<wxs src="./template.wxs" module="tools" />
+<view>{{tools.getMax(array)}}</view>
+<view>{{tools.sayName()}}</view>
+<wxs src="../common.wxs" module="common" />
+<view>{{common.sayName()}}</view>
+<!-- 以下是对一个自定义组件的引用 -->
+<view>
+  以下是对一个自定义组件的引用
+  <component-tag-name inner-text="Some text">
+    <view>Slot 插入内容</view>
+  </component-tag-name>
+</view>

@@ -1,0 +1,18 @@
+// WXS 代码可以编写在 wxml 文件中的 <wxs> 标签内，或以 .wxs 为后缀名的文件内。
+
+var common = require('../common.wxs')
+
+console.log(common.sayName())
+
+var getMax = function(array) {
+  var max = undefined
+  for (var i = 0; i < array.length; ++i) {
+    max = max === undefined ? array[i] : max >= array[i] ? max : array[i]
+  }
+  return max
+}
+//暴露其内部的私有变量与函数
+module.exports = {
+  getMax: getMax,
+  sayName: common.sayName
+}
