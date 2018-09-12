@@ -33,7 +33,9 @@ module.exports.getMax = getMax;
 <!-- 以下是对一个自定义组件的引用 -->
 <view>
   以下是对一个自定义组件的引用
+  <!-- 向子组件的属性传递动态数据 -->
   <component-tag-name inner-text="Some text">
+     <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
     <view>Slot 插入内容</view>
   </component-tag-name>
 </view>

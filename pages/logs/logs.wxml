@@ -1,6 +1,7 @@
-<!--logs.wxml-->
+<!-- logs.wxml -->
 <view class="container log-list">
   <block wx:for="{{logs}}" wx:for-item="log" wx:key="index">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
+    <text class="log-item" bindtap="logBind" data-item="{{log}}">{{index + 1}}. {{log}}</text>
+    <component-communicate inner-text='{{log}}' bind:myevent="onMyEvent" data-index="{{index}}"></component-communicate>
   </block>
 </view>
