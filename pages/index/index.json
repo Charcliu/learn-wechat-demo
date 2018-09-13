@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "component-common": "/pages/component/common/common",
+    "component-communicate": "/pages/component/communicate/communicate",
+    "component-abstractgroup": "/pages/component/abstractgroup/abstractgroup"
+  }
+}

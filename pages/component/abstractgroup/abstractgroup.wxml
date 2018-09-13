@@ -1,0 +1,7 @@
+<view>
+    <label>
+        抽象组件
+        <!-- 抽象节点 -->
+        <selectable></selectable>
+    </label>
+</view>
