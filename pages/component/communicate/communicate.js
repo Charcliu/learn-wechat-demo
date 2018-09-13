@@ -6,7 +6,7 @@ Component({
       value: 'Hello Component'
     }
   },
-  data: {},
+  data: { from: 'component' },
   methods: {
     onTap: function() {
       // 所有要带到主页面的数据，都装在eventDetail里面
@@ -20,5 +20,10 @@ Component({
       }
       this.triggerEvent('myevent', eventDetail, eventOption)
     }
+  },
+  behaviors: [require('behavior.js')],
+  ready() {
+    console.log('----------------' + this.data.from + '----------------')
+    console.log('----------------' + this.data.test + '----------------')
   }
 })
