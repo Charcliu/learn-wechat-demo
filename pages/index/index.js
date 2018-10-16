@@ -21,6 +21,22 @@ Page({
     })
   },
   onLoad: function() {
+
+    wx.request({
+      url: 'https://www.poetrydistant.cn:8080/blog/login',
+      method:'POST',
+      data:{
+        username:'ChangLau',
+        password:'wff1993lc'
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success (res) {
+        console.log(res.data)
+      }
+    })
+
     // 页面渲染后 执行
     this.setData({
       msg: 'Hello WeChat'
